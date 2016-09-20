@@ -9,6 +9,7 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>li:nth-child(2n){background:grey}</style>
     </head>
     <body>
         
@@ -43,8 +44,10 @@ and open the template in the editor.
         <form id="form">
             <input type="submit" value="Press here to awesome">
         </form>
+        
         <br>
-        <table id ="sometable">
+        
+        <table id ="sometable" style="border:2px solid black">
             
         </table>
         <br>
@@ -83,15 +86,35 @@ and open the template in the editor.
         
         <form id="ameno">
             Message:
-            <input type="text" name="msg"><br>
+            <input type="text" id="msg"><br>
             Password:
-            <input type="password" name="pwd"><br>
-            <input type="radio" name="gender" value="male">male<br>
-            <input type="radio" name="gender" value="female">female<br>
-            <input type="checkbox" name="wizard">Are you a wizard?<br>
-            <input type="submit" value="ameno">
+            <input type="password" id="pwd"><br>
+            <input type="radio" id="gender" value="male">male<br>
+            <input type="radio" id="gender" value="female">female<br>
+            <input type="checkbox" id="wizard">Are you a wizard?<br>
+            <input type="button" value="ameno" onclick="handleForm()">
         </form>
         
+        <br>
+        
+        <table id="awesomeTable" style="border:2px solid black">
+            
+        </table>
+        
         <script src="scripts/jsex2.js"></script>
+        <br>
+        Choose a game to play:
+        <ul>
+            <li><a onclick="respond(this)" onmouseover="hover(this)" onmouseout="restore(this)">Destiny</a></li>
+            <li><a onclick="respond(this)" onmouseover="hover(this)" onmouseout="restore(this)">Heavy Rain</a></li>
+            <li><a onclick="respond(this)" onmouseover="hover(this)" onmouseout="restore(this)">Final Fantasy</a></li>
+            <li><a onclick="respond(this)" onmouseover="hover(this)" onmouseout="restore(this)">Tales of Symphonia</a></li>
+            <li><a onclick="respond(this)" onmouseover="hover(this)" onmouseout="restore(this)">Xenoblade Chronicles</a></li>
+            <li><a onclick="respond(this)" onmouseover="hover(this)" onmouseout="restore(this)">Xenoblade Chronicles x</a></li>
+            <li><a onclick="respond(this)" onmouseover="hover(this)" onmouseout="restore(this)">Chrono Cross</a></li>
+            <li><a onclick="respond(this)" onmouseover="hover(this)" onmouseout="restore(this)">Bioshock</a></li>
+            <li><a onclick="respond(this)" onmouseover="hover(this)" onmouseout="restore(this)">Resident Evil</a></li>
+            <li><a onclick="respond(this)" onmouseover="hover(this)" onmouseout="restore(this)">Silent Hill</a></li>
+        </ul>
     </body>
 </html>

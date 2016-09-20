@@ -88,22 +88,39 @@ spy.onmouseout = function () {
     spy.innerHTML = "I spy with my little eye...";
 };
 
-var myBetterForm = document.getElementById("ameno");
-myBetterForm.onsubmit = function () {
-    var msg = myBetterForm.getAttribute("msg, ");
-    var pwd = myBetterForm.getAttribute("pwd, ");
-    var gender = myBetterForm.getAttribute("gender, ");
-    var wizard = myBetterForm.getAttribute("wizard");
+function handleForm() {
+    var msg = document.getElementById("msg").value + ", ";
+    var pwd = document.getElementById("pwd").value + ", ";
+    var gender = document.getElementById("gender").value + ", ";
+    var wizard = (document.getElementById("wizard").checked === true ? "wizard" : "not a wizard");
     console.log(msg + pwd + gender + wizard);
 
-    var fields = [msg, pwd, gender, wizard];
-    fields.forEach(function (entry) {
+    var myAwesomeTable = document.getElementById("awesomeTable");
         var i = 0;
-        var row = myTable.insertRow(i);
+        var row = myAwesomeTable.insertRow(i);
         var td1 = row.insertCell(0);
         var td2 = row.insertCell(1);
         var td3 = row.insertCell(2);
         var td4 = row.insertCell(3);
-    });
+        td1.innerHTML = msg;
+        td2.innerHTML = pwd;
+        td3.innerHTML = gender;
+        td4.innerHTML = wizard;
+}
+;
 
-};
+function respond(sender) {
+
+    console.log("Starting up... <" + sender.innerHTML + ">");
+
+}
+
+function hover(sender) {
+
+    sender.style.fontSize = "x-large";
+
+}
+
+function restore(sender) {
+    sender.style.fontSize = "medium";
+}
