@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21-09-2016, 10:38:34
+    Author     : xboxm
+*/
+
+.threexthree {
+    border-spacing : 5px;
+    display : table;
+}
+
+.threexthree:nth-child(3n)::after {
+    display : block;
+}
+
+.row {
+    display : table-row;
+}
+
+.cell {
+    width:50px;
+    height:50px;
+    background: grey;
+    display: table-cell;
+    color : whitesmoke;
+    text-align : center;
+    
+}
+
+.row div:last-child {
+    background:red;
+}
+
+.imgcontainer {
+    border-spacing : 4px;
+}
+
+.image {
+    display : inline;
+    height : 80px;
+    width : 80px;
+    background:black;
+    color : white;
+    font-size : 40pt;
+    margin : 10px;
+}
