@@ -42,6 +42,51 @@ $(document).ready(function () {
             })
             ;
         })();
+        
+    $('#get-person').on('click', function () {
+
+            $.ajax({
+                url: 'http://localhost:8080/module2js/person',
+                type: 'GET',
+                dataType: 'json',
+                success: function (res) {
+                    $('#person-tbody').append(
+                        "<tr>" +
+                        "<td>" + res.firstName + "</td>" +
+                        "<td>" + res.lastName + "</td>" +
+                        "<td>" + res.age + "</td>" +
+                        "</tr>"
+                    );
+                },
+                error: function (res) {
+                    console.log("Error");
+                }
+            });
+
+        });
+
+        $('#add-person').on('click', function () {
+
+            var person = {
+                firstName: $('#firstname').val(),
+                lastName: $('#lastname').val(),
+                age: $('#age').val()
+            };
+
+            $.ajax({
+                url: 'http://localhost:8080/module2js/person',
+                type: 'POST',
+                dataType: 'json',
+                data: JSON.stringify(person),
+                success: function (res) {
+                    console.log(res);
+                },
+                error: function (res) {
+                    console.log(res);
+                }
+            });
+
+        });    
     
     $("#north").click(function() {
         alert("You clicked north");

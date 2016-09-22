@@ -15,7 +15,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import time.Time;
 
 @WebServlet(urlPatterns = {"/time"})
 public class TimeServlet extends HttpServlet {
@@ -28,7 +27,6 @@ public class TimeServlet extends HttpServlet {
         int second = ZonedDateTime.now().getSecond();
         
         Time time = new Time(hour, minute, second);
-        System.out.println("ASALDASDQWUEHQÆWLEAS'ÆAØSÆD'ASÆDQWEJKASDKASJDASD141241241231232132141414123123");
         
         ServletOutputStream out = response.getOutputStream();
         out.print(new Gson().toJson(time));
